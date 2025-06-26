@@ -2,11 +2,14 @@
   "build": {
     "nixpacksPlan": {
       "phases": {
+        "setup": {
+          "nixPkgs": ["python311", "pip"]
+        },
         "install": {
-          "cmds": ["npm install"]
+          "cmds": ["pip install -r requirements.txt"]
         },
         "start": {
-          "cmds": ["npm run dev"]
+          "cmds": ["python gradio_ui.py"]
         }
       }
     }
